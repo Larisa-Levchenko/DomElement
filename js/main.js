@@ -1,7 +1,5 @@
 'use strict';
 
-const body = document.querySelector('body');
-
 function DomElement(selector, height, width, bg, fontSize) {
     this.selector = selector;
     this.height = height;
@@ -25,7 +23,7 @@ DomElement.prototype.addElement = function () {
     elem.style.backgroundColor = `#${this.bg}`;
     elem.style.fontSize = `${this.fontSize}px`;
     elem.textContent = 'Урок №14';
-    body.append(elem);
+    document.body.append(elem);
 };
 
 let element = new DomElement('#block', 100, 200, '268927', 35);
