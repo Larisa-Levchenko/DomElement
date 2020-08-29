@@ -30,23 +30,26 @@ element.addElement();
 const block = document.querySelector('#block');
 block.style.position='fixed';
 
-let vertically = 0;
-let horizontally = 0;
-document.body.addEventListener('keypress', function () {   
-    if (event.keyCode === 50) {
-        vertically += 10;
-    }
-    if (event.keyCode === 56) {
-        vertically -= 10;
-    }
-    if (event.keyCode === 54) {
-        horizontally += 10;        
-    }
-    if (event.keyCode === 52) {
-        horizontally -= 10;
-    }
-    block.style.top = `${vertically}px`;
-    block.style.left = `${horizontally}px`;
-});
+let vertically = 50;
+let horizontally = 50;
 
+block.style.top = `${vertically}px`;
+block.style.left = `${horizontally}px`;
+
+document.addEventListener('keydown', function () {
+     if (event.keyCode === 40) {
+         vertically += 10;
+     }
+     if (event.keyCode === 38) {
+         vertically -= 10;
+     }
+     if (event.keyCode === 39) {
+         horizontally += 10;
+     }
+     if (event.keyCode === 37) {
+         horizontally -= 10;
+     }
+     block.style.top = `${vertically}px`;
+     block.style.left = `${horizontally}px`;
+});
 
